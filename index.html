@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soghat-e-Multan | Asli Multani Sohan Halwa</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:#0f0a0a;color:#fff;overflow-x:hidden}
+@keyframes fadeUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+/* WELCOME - SHARP */
+#welcome{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center}
+#welcome.hide{display:none}
+.welcome-box{background:#1a0e0e;border:1px solid #c9a227;padding:32px 26px;max-width:440px;width:100%}
+.welcome-box img{width:90px;height:90px;border-radius:50%;border:2px solid #c9a227;object-fit:cover}
+.welcome-box h1{color:#d4af37;font-size:28px;margin:14px 0 8px;letter-spacing:.5px}
+.welcome-box p{color:#d8c9a3;font-size:15px;line-height:1.7}
+.welcome-btn{margin-top:18px;background:#c9a227;color:#000;padding:13px 30px;border:none;font-size:15px;font-weight:700;letter-spacing:1px;cursor:pointer;text-transform:uppercase}
+.welcome-btn:hover{background:#e5c542}
+.marquee{background:#c9a227;color:#000;overflow:hidden;white-space:nowrap;padding:9px 0;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+.marquee span{display:inline-block;animation:marquee 24s linear infinite}
+.hero{background:linear-gradient(180deg,#1a0e0e,#0f0a0a);text-align:center;padding:36px 20px 48px}
+.free-badge{background:#1a3c2a;border:1px solid #25D366;color:#7fe3a8;padding:8px 18px;font-weight:700;display:inline-block;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
+.logo{width:160px;height:160px;border-radius:50%;border:2px solid #c9a227;object-fit:cover;margin:20px 0}
+.hero h1{font-size:48px;color:#e5c542;animation:fadeUp .5s;letter-spacing:1px;font-weight:800}
+.hero p{font-size:17px;color:#c9b896;margin-top:10px;letter-spacing:.3px}
+.price-box{background:#fff;color:#111;padding:24px 20px;max-width:430px;margin:28px auto;border-top:4px solid #c9a227}
+.price-box .top-text{font-size:12px;font-weight:800;letter-spacing:2px;color:#666;text-transform:uppercase}
+.price-box h2{font-size:46px;margin:10px 0 4px;line-height:1;font-weight:800;letter-spacing:-1px}
+.price-box .per{font-size:13px;color:#666;letter-spacing:1px}
+.price-box .bottom-text{font-size:13px;font-weight:700;background:#111;color:#e5c542;display:inline-block;padding:7px 16px;margin-top:12px;letter-spacing:.5px;text-transform:uppercase}
+.btn{display:inline-block;background:#25D366;color:#fff;padding:15px 38px;text-decoration:none;font-size:16px;font-weight:700;letter-spacing:.5px;cursor:pointer;border:none;text-transform:uppercase}
+.btn:hover{background:#1da851}
+.btn-gold{background:#c9a227;color:#000}
+.btn-gold:hover{background:#e5c542}
+.section{padding:48px 20px;max-width:1050px;margin:0 auto;text-align:center}
+.section h2{font-size:30px;color:#e5c542;margin-bottom:24px;letter-spacing:1px;text-transform:uppercase;font-weight:800}
+.section h2:after{content:'';display:block;width:60px;height:3px;background:#c9a227;margin:12px auto 0}
+.slider-box{position:relative;max-width:700px;margin:0 auto;overflow:hidden;border:1px solid #333;height:380px}
+.slider-box img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0;transition:opacity .7s ease}
+.slider-box img.active{opacity:1}
+.dots{margin:14px 0}.dot{display:inline-block;width:22px;height:3px;background:#444;margin:0 4px;cursor:pointer}.dot.active{background:#c9a227}
+.cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.card{background:#1a0e0e;padding:26px 20px;border:1px solid #2a1e1e;border-top:3px solid #c9a227}
+.card h3{color:#e5c542;margin-bottom:10px;font-size:18px;letter-spacing:.5px;text-transform:uppercase}.card p{color:#c9b896;line-height:1.7;font-size:14px}
+.review{background:#1a0e0e;padding:24px;margin:16px auto;max-width:700px;border:1px solid #2a1e1e;border-left:4px solid #c9a227;text-align:left}
+.review .stars{color:#e5c542;font-size:16px;letter-spacing:3px}
+.review p{font-size:15px;line-height:1.8;color:#e8ddc2;margin:12px 0}
+.review b{color:#e5c542;font-size:15px}
+.review .city{color:#888;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:1000;align-items:center;justify-content:center;padding:15px}
+.modal.show{display:flex}
+.form-box{background:#fff;color:#111;padding:28px 24px;width:100%;max-width:450px;position:relative;border-top:4px solid #c9a227}
+.form-box h2{color:#111;text-align:center;font-size:22px;letter-spacing:1px;text-transform:uppercase}
+.form-box p{text-align:center;color:#666;margin:8px 0 18px;font-size:13px}
+.close{position:absolute;top:10px;right:16px;font-size:26px;cursor:pointer;color:#999}
+.form-box label{display:block;text-align:left;margin:10px 0 4px;color:#111;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.form-box input,.form-box textarea{width:100%;padding:12px 14px;border:1px solid #ddd;background:#f9f9f9;color:#000;font-size:14px;outline:none}
+.form-box input:focus,.form-box textarea:focus{border-color:#c9a227;background:#fff}
+.form-box textarea{height:65px;resize:none}
+.submit-btn{width:100%;margin-top:18px}
+.whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25D366;width:56px;height:56px;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;z-index:999}
+footer{text-align:center;padding:22px;color:#777;font-size:12px;letter-spacing:1px;border-top:1px solid #222}
+@media(max-width:700px){.hero h1{font-size:32px}.cards{grid-template-columns:1fr}.slider-box{height:280px}.price-box h2{font-size:38px}}
+</style>
+</head>
+<body>
+
+<div id="welcome">
+<div class="welcome-box">
+<img src="logo.jpg.jpeg">
+<h1>SOGHAT-E-MULTAN</h1>
+<p>Multan ka asli, khalis desi ghee wala Sohan Halwa.<br>Fresh, Premium Quality - Ab aapke ghar tak, <b>FREE Delivery</b> ke sath.</p>
+<button class="welcome-btn" onclick="closeWelcome()">Halwa Dekhein →</button>
+</div>
+</div>
+
+<div class="marquee"><span>Free Delivery Pure Pakistan &nbsp;•&nbsp; Asli Multani Sohan Halwa &nbsp;•&nbsp; 100% Desi Ghee &nbsp;•&nbsp; Rs. 2200 / Kg &nbsp;•&nbsp; Soghat-e-Multan &nbsp;•&nbsp; Free Delivery Pure Pakistan &nbsp;•&nbsp;</span></div>
+
+<div class="hero">
+<div class="free-badge">Free Home Delivery - Pure Pakistan</div><br>
+<img src="logo.jpg.jpeg" class="logo">
+<h1>SOGHAT-E-MULTAN</h1>
+<p>Asli Multani Sohan Halwa | 100% Desi Ghee</p>
+<div class="price-box">
+<div class="top-text">Premium Sohan Halwa - 1 Kg</div>
+<h2>Rs. 2200</h2>
+<div class="per">PER KG &nbsp;•&nbsp; FRESH &nbsp;•&nbsp; PREMIUM</div>
+<div class="bottom-text">Free Delivery &nbsp;•&nbsp; Cash on Delivery</div>
+</div>
+<button class="btn" onclick="openForm()">Order Now</button>
+</div>
+
+<div class="section">
+<h2>Hamara Sohan Halwa</h2>
+<div class="slider-box" id="slider">
+<img src="halwa1.jpg.jpeg" class="active"><img src="halwa2.jpg.jpeg"><img src="halwa3.jpg.jpeg"><img src="halwa4.jpg.jpeg"><img src="halwa5.jpg.jpeg">
+</div>
+<div class="dots" id="dots"></div>
+<p style="font-size:16px;color:#d8c9a3;line-height:1.8;max-width:650px;margin:0 auto">Narm, khasta aur desi ghee ki khushbu se bhara hua - Jo ek baar <b style="color:#e5c542">Soghat-e-Multan</b> ka halwa khaye, wo baar baar mangwaye.</p><br>
+<button class="btn btn-gold" onclick="openForm()">Order Now - Rs. 2200 / Kg</button>
+</div>
+
+<div class="section">
+<h2>Kyun Soghat-e-Multan?</h2>
+<div class="cards">
+<div class="card"><h3>Asli Multani</h3><p>Multan ki mashhoor asli recipe, generations se chali aa rahi zaiqa.</p></div>
+<div class="card"><h3>Desi Ghee</h3><p>100% khalis desi ghee me tayyar, koi milawat nahi.</p></div>
+<div class="card"><h3>Free Delivery</h3><p>Poore Pakistan me FREE home delivery, fresh halwa aapke darwaze par.</p></div>
+</div>
+</div>
+
+<div class="section">
+<h2>VIP Customers</h2>
+<div class="review"><div class="stars">★★★★★</div><p>"Maine Lahore me bohat jagah ka halwa khaya hai, lekin <b>Soghat-e-Multan</b> jaisa zaiqa kahin nahi mila. Bilkul fresh, desi ghee ki khushbu door se hi aa rahi thi. Mehmaano ne kha kar kaha ke ye to Multan se mangwaya hai na? Ab to har dawat ke liye yahin se order karta hun."</p><b>Ahmed Raza - Businessman</b><br><span class="city">Lahore</span></div>
+<div class="review"><div class="stars">★★★★★</div><p>"Meri ammi kehti hain Multan ka halwa hi asli halwa hota hai. Maine <b>Soghat-e-Multan</b> se mangwaya to ammi ne ek bite kha kar kaha - beta ye to bilkul bachpan wala zaiqa hai! Packing itni VIP thi ke halwa bilkul fresh pohanch gaya. FREE delivery ne to dil hi jeet liya."</p><b>Fatima Khan - Home Chef</b><br><span class="city">Karachi</span></div>
+<div class="review"><div class="stars">★★★★★</div><p>"Shadi ke liye 10 Kg order kiya tha <b>Soghat-e-Multan</b> se. Sab mehmaano ne tareef ki, sab ne pucha kahan se liya hai? Halwa narm, khasta aur itna lazeez ke logon ne dobara mangwaya. Delivery bhi time par aa gayi. Highly Highly Recommended!"</p><b>Usman Sheikh - Islamabad</b><br><span class="city">Islamabad | Shadi Order - 10 Kg</span></div>
+<br><button class="btn" onclick="openForm()">Aap Bhi Order Karein - Rs. 2200</button>
+</div>
+
+<div class="modal" id="orderModal"><div class="form-box"><span class="close" onclick="closeForm()">×</span><h2>Order Form</h2><p>Soghat-e-Multan - 1 Kg - Rs. 2200 | FREE Delivery</p>
+<form onsubmit="sendOrder(event)">
+<label>Full Name *</label><input type="text" id="name" placeholder="Apna poora naam likhein" required>
+<label>Mobile Number *</label><input type="tel" id="phone" placeholder="03xx-xxxxxxx" required>
+<label>Complete Address *</label><textarea id="address" placeholder="Makan No, Gali, Mohalla, Shehar..." required></textarea>
+<label>Quantity</label><input type="number" id="qty" value="1" min="1" max="10" oninput="updateTotal()">
+<div id="bill" style="background:#f5f5f5;color:#000;padding:14px;margin-top:15px;text-align:left;font-size:14px;line-height:1.8;border:1px solid #ddd">
+<div>Sohan Halwa 1 Kg x <span id="bqty">1</span></div>
+<div style="border-top:1px solid #ddd;margin-top:6px;padding-top:6px"><b>Total Payable: Rs. <span id="btotal">2200</span></b> &nbsp;|&nbsp; Delivery: FREE</div>
+</div>
+<button type="submit" class="btn submit-btn">WhatsApp Par Order Bhejein</button>
+</form></div></div>
+
+<a href="https://wa.me/923040984846" class="whatsapp-float" target="_blank">💬</a>
+<footer>© 2026 SOGHAT-E-MULTAN | ALL RIGHTS RESERVED | MADE IN MULTAN</footer>
+
+<script>
+function closeWelcome(){document.getElementById('welcome').classList.add('hide');}
+setTimeout(closeWelcome,6000);
+let imgs=document.querySelectorAll('#slider img');let dotsBox=document.getElementById('dots');let cur=0;
+imgs.forEach((_,i)=>{let d=document.createElement('span');d.className='dot'+(i==0?' active':'');d.onclick=()=>showSlide(i);dotsBox.appendChild(d);});
+let dots=document.querySelectorAll('.dot');
+function showSlide(n){imgs[cur].classList.remove('active');dots[cur].classList.remove('active');cur=n;imgs[cur].classList.add('active');dots[cur].classList.add('active');}
+setInterval(()=>{showSlide((cur+1)%imgs.length);},4000);
+function openForm(){document.getElementById('orderModal').classList.add('show');updateTotal();}
+function closeForm(){document.getElementById('orderModal').classList.remove('show');}
+function updateTotal(){
+  let qty = parseInt(document.getElementById('qty').value) || 1;
+  let total = qty * 2200;
+  document.getElementById('bqty').innerText = qty;
+  document.getElementById('btotal').innerText = total;
+}
+function sendOrder(e){e.preventDefault();let name=document.getElementById('name').value;let phone=document.getElementById('phone').value;let address=document.getElementById('address').value;let qty=document.getElementById('qty').value;let total=qty*2200;let msg=`Assalam o Alaikum! Soghat-e-Multan Order:%0A%0A*Name:* ${name}%0A*Mobile:* ${phone}%0A*Address:* ${address}%0A*Product:* Sohan Halwa 1 Kg x ${qty}%0A*Total:* Rs. ${total}%0A*Delivery:* FREE`;window.open('https://wa.me/923040984846?text='+msg,'_blank');}
+document.getElementById('orderModal').addEventListener('click',function(e){if(e.target==this)closeForm();});
+</script>
+</body>
+</html>
